@@ -40,14 +40,18 @@ describe('Home', () => {
     });
 
     it('Find heading element & assert the text', async () => {
+
+        await browser.url('https://practice.automationbro.com');
+
+
         // find heading element
-        const headingEl = await $('.elementor-widget-container h1');
+        const headingE =  $('.elementor-widget-container h1');
 
         // get the text
-        const headingText = await headingEl.getText();
+        const headingText = await headingE.getText();
 
         // Assert the text
-        await expect(headingText).toHaveText('Think different. Make different.'); // Jest library
-        // await expect(headingEl).toHaveText('Think different. Make different!'); // wdio expect assertion
+        await expect(headingE).toHaveText('Think different. Make different.'); // wdio expect assertion
+        // await expect(headingEl).toHaveText('Think different. Make different!'); // 
     });
-});
+})
